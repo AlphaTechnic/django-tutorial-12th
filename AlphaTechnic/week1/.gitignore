@@ -2,3 +2,4 @@
 .idea
 secrets.json
 *.pyc
+db.sqlite3

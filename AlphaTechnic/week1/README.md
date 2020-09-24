@@ -27,7 +27,7 @@ urlpatterns = [
 
 
 
-## part2
+## part 2
 
 ```python
 ## polls/models.py
@@ -41,20 +41,18 @@ class Question(models.Model):
 
 
 class Choice(models.Model):
-    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    question = models.ForeignKey(Question, on_delete=models.CASCADE, related_name="choices")
     choice_text = models.CharField(max_length=200)
     votes = models.IntegerField(default=0)
 ```
 
 몇몇 Field 클래스들은 필수 인수가 필요하다. 예를 들어, CharField는 max_length를 입력해야 함.
 
-
-
 django는 migrate를 하게 되면, 기본 키 (ID)가 자동으로 추가된다. 관례에 따라, Django는 외래 키 필드명에 "`_id`" 이름을 자동으로 추가한다.
 
 
 
-## part3
+## part 3
 
 ### 지름길 : render()
 
@@ -109,7 +107,7 @@ get_object_or404() 함수는
 
 
 
-## part4
+## part 4
 
 - GET과 POST의 차이
     - HTTP
